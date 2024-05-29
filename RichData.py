@@ -10,10 +10,11 @@ def copyFiles01(files, path_destination, mon_path):
         source_path = mon_path + file
         if os.path.exists(source_path):
             destination_path = path_destination + year + '/' + mon +'/'+ file
+            print(source_path)
             isCheckSaved = shutil.copyfile(source_path, destination_path)
             if isCheckSaved:
                 count_items_saved += 1
-                print(f"{file}, images copied successfully. =====> {count_items_saved}")
+                # print(f"{file}, images copied successfully. =====> {count_items_saved}")
             else: count_items_not_save + 1
 
 
@@ -22,9 +23,11 @@ path_data2 = root_folder + 'DataOutput/NegativeFiles_fix/'
 path_destination = root_folder + 'DataOutput/DataUpload/RichData/' 
 
 
+
+
 years = getFiles(path_data1)
 months = sorted(getFile2(path_data1 + years[0]))
-
+# print(f"{months}/{years}", path_data1)
 
 for year in years:
     p1 = path_data1 + year + '/'
@@ -39,8 +42,8 @@ for year in years:
 
 source_path = root_folder + 'DataOutput/DataUpload/RichData/'
 print('\n================================================')
-print(f"{count_items_saved} files copied successfully.")
-print(f"{count_items_not_save} files was not copied successfully.")
+# print(f"{count_items_saved} files copied successfully.")
+# print(f"{count_items_not_save} files was not copied successfully.")
 
 
               

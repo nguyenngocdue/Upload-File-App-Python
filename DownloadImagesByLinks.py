@@ -20,7 +20,7 @@ source_directory = os.path.join(root_dataOutput, f'NegativeFiles/{year_folder}/{
 negative_files = getFiles(source_directory)
 name150x150, primary_name = divide150AndPrimaryImage(negative_files)
 if len(name150x150): print(f"Check files that is not primary file: {name150x150}")
-strLink = f"https://minio.tlcmodular.com/tlc-app/app2_prod/{year_folder}/{mon_folder}/"
+strLink = f"https://minio.tlcmodular.com/tlc-app/output/"
 image_links = addLinkForImageName(strLink, primary_name, '-150x150')
 
 print(GREEN + f'======================={year_folder}/{mon_folder}===========================' + RESET)
